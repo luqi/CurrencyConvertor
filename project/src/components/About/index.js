@@ -23,7 +23,6 @@ const About = () => {
       <NavLink to="/contact" style = {{marginLeft: 10}}><ContactsIcon /> Contact</NavLink>
       <div>
       <p>We support all 161 commonly circulating world currencies listed below. These cover 99% of all UN recognized states and territories.</p>
-
       </div>
       </Container>  
       
