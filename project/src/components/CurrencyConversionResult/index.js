@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import {useParams } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress'
 import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider'
 
 const API_KEY = process.env.REACT_APP_Currency_Converter_API_KEY
 
@@ -22,8 +23,9 @@ const CurrencyConversionResult = () => {
     }, [sourceCurrency, targetCurrency, amount])
     return !isLoading && conversionRate && conversionResult ?(
         <>
-            <p>{conversionRate}</p>
-            <p>{conversionResult}</p>
+            <p>The exchange rate for {sourceCurrency} to {targetCurrency} is: {conversionRate}</p>
+            <Divider variant="middle" />
+            <p>${amount} {sourceCurrency} is equivalent to ${conversionResult} {targetCurrency}</p>
         </>
     ):(
             <Box sx={{ display: 'flex' }}>
