@@ -1,0 +1,11 @@
+.pageContainer{
+    background-color: antiquewhite;
+}
+
+p{
+    font-size: 40px;
+}
+
+#outlined-basic {
+    background-color: transparent;
+}
