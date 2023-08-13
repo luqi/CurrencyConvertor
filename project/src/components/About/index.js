@@ -5,6 +5,7 @@ import ContactsIcon from '@mui/icons-material/Contacts'
 import { NavLink } from "react-router-dom"
 import Container from '@mui/material/Container'
 import HomeIcon from '@mui/icons-material/Home'
+import HistoryIcon from '@mui/icons-material/History';
 import './index.css'
 
 
@@ -18,6 +19,8 @@ const About = () => {
       <NavLink to="/" style = {{marginRight: 10}}><HomeIcon /> Home</NavLink>
       {' | '}
       <NavLink to="/currencyconvertor"><MonetizationOnIcon /> Currency Converter</NavLink>
+      {' | '}
+      <NavLink to="/historicaldata"><HistoryIcon /> Historical Data</NavLink>
       {' | '}
       <NavLink to="/about" style = {{marginRight: 10}}><InfoIcon /> About</NavLink>
       {' | '}

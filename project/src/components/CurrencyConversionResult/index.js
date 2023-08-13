@@ -27,7 +27,7 @@ const CurrencyConversionResult = () => {
         <>
             <p>The exchange rate for {location.state.sourceCurrencyDetail} to {location.state.targetCurrencyDetail} is: {conversionRate}</p>
             <Divider variant="middle" />
-            <p>${amount} {location.state.sourceCurrencyDetail} is equivalent to ${conversionResult} {location.state.targetCurrencyDetail}</p>
+            <p>{amount} {location.state.sourceCurrencyDetail} is equivalent to {conversionResult} {location.state.targetCurrencyDetail}</p>
         </>
     ):(
             <Box sx={{ display: 'flex' }}>
