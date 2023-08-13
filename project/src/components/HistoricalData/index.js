@@ -101,6 +101,7 @@ const HistoricalData = () => {
                     />
                     <LocalizationProvider dateAdapter={AdapterDayjs} required>
                        <DatePicker format="DD-MM-YYYY" onChange = {(newValue) => setDatehistorical(newValue)}/>
+                       <DatePicker format="DD-MM-YYYY" />
                     </LocalizationProvider>
                 <Button type='submit' variant="outlined">Search</Button>
             </Stack>

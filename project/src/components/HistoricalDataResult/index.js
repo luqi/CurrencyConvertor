@@ -29,7 +29,7 @@ const HistoricalDataResult = () => {
     }, [sourceHistorical, targetHistorical, dateHistorical])
     return (
         <>
-            <p>this function is not completed. A chart with historical data is expected, however, API is not available</p>
+            <p>{results}this function is not completed, however, all props passed from HistoricalData Component. A chart with historical data is expected, however, API is not available</p>
         </>
     )
     
