@@ -9,11 +9,14 @@ import MonetizationOnIcon from '@mui/icons-material/MonetizationOn'
 import InfoIcon from '@mui/icons-material/Info'
 import ContactsIcon from '@mui/icons-material/Contacts'
 import HomeIcon from '@mui/icons-material/Home'
+import HistoryIcon from '@mui/icons-material/History';
 import './index.css'
 
 const API_KEY = process.env.REACT_APP_Currency_Converter_API_KEY
 
 const CurrencyConverter = () => {
+
+  // currency conversion
     const [sourceCurrencyList, setSourceCurrencyList] = useState([])
     const [targetCurrencyList, setTargetCurrencyList] = useState([])
     const [sourceCurrency, setSourceCurrency] = useState('')
@@ -45,10 +48,10 @@ const CurrencyConverter = () => {
         setAmount(e.target.value)
       }
 
-      const handleSubmit = (e) => {
-		e.preventDefault()
-		navigate(`result/${sourceCurrency}/${targetCurrency}/${amount}`, { state: { sourceCurrencyDetail: sourceCurrencyDetail, targetCurrencyDetail: targetCurrencyDetail}  })
-	}
+      const handleConverstionSubmit = (e) => {
+		      e.preventDefault()
+		      navigate(`result/${sourceCurrency}/${targetCurrency}/${amount}`, { state: { sourceCurrencyDetail: sourceCurrencyDetail, targetCurrencyDetail: targetCurrencyDetail}  })
+	    }
 
 
 
@@ -56,20 +59,22 @@ const CurrencyConverter = () => {
       <div className='pageContainer'>
         <Container maxWidth='md' style={{ textAlign: 'center',position: "flex", justifyContent: "center", alignItems:"center"}}>
             <Container maxWidth='md' sx={{ textAlign: 'center'}}>
-            <NavLink to="/" style = {{marginRight: 10}}><HomeIcon /> Home</NavLink>
+              <NavLink to="/" style = {{marginRight: 10}}><HomeIcon /> Home</NavLink>
               {' | '}
-            <NavLink to="/currencyconvertor"><MonetizationOnIcon /> Currency Converter</NavLink>
+              <NavLink to="/currencyconvertor"><MonetizationOnIcon /> Currency Converter</NavLink>
               {' | '}
-            <NavLink to="/about" style = {{marginRight: 10}}><InfoIcon /> About</NavLink>
+              <NavLink to="/historicaldata"><HistoryIcon /> Historical Data</NavLink>
               {' | '}
-            <NavLink to="/contact" style = {{marginLeft: 10}}><ContactsIcon /> Contact</NavLink>
-        </Container>  
+              <NavLink to="/about" style = {{marginRight: 10}}><InfoIcon /> About</NavLink>
+              {' | '}
+              <NavLink to="/contact" style = {{marginLeft: 10}}><ContactsIcon /> Contact</NavLink>
+            </Container>  
             <h1>Currency Converter</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleConverstionSubmit}>
                 <Stack direction='row'
-					alignItems='center'
-					justifyContent='center'
-					spacing={2}
+					          alignItems='center'
+					        justifyContent='center'
+					        spacing={2}
                 >
                     <Autocomplete
                         disablePortal
@@ -107,7 +112,7 @@ const CurrencyConverter = () => {
             </Stack>
             </form>
             <Outlet />
-        </Container>
+            </Container>
         </div>
     )
 
