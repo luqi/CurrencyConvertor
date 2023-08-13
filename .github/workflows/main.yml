@@ -1,1 +1,31 @@
+name: upload static files to S3 bucket
+
+on: 
+  push:
+    branches: 
+     - test
+jobs:
+  deploy: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+    
+      - name: Configure AWS details
+        uses: aws-actions/configure-aws-credentials@v2
+        with: 
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: run npm i to install dependencies
+        run: npm install
+
+      - name: Run unit tests
+        run: npm run test
+      
+      - name: Build App
+        run: npm run build
+
+      - name: Deploy assets to S3
+        run: aws s3 sync ./build/ s3://${{ secrects.BUCKET }} --delete
 
